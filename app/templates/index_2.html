@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html;charset-utf-8"/>
+    <title>手机输入</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="keywords" content="xxxxxx"/>
+    <meta name="description" content="xxxxx"/>
+    <link rel="shortcut icon" href="xxxxxx" />
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,initial-scale=0,minimum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/> 
+</head>
+<body style="background: #666;">
+    <form class="m-t-md" action="#" method="POST">
+        {{ form.csrf_token }}
+        <div>
+            <input type="text" class="form-control" placeholder="11位手机号" name="mobile" value="">
+            <input type="text" class="form-control" style="display:none" name="uid" value="{{uid}}">
+        </div>
+            <button type="submit" class="btn btn-primary btn-block">提交</button>
+            {% for message in get_flashed_messages() %}
+            <div class="alert alert-warning">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ message }}
+            </div>
+            {% endfor %}
+ 
+    </form>
+</body>
+
+<html>
